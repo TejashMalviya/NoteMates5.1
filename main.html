@@ -3,37 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Notes Sharing</title>
+    <title>NoteMates</title>
     <link rel="stylesheet" href="styles1.css">
 </head>
-<body>
+<body class="dark-mode">
     <header>
-        <h1>Student Notes Sharing Platform</h1>
-        <select id="branchSelector" onchange="changeTheme()">
-            <option value="default">Select Branch</option>
-            <option value="cse">Computer Science</option>
-            <option value="ece">Electronics</option>
-            <option value="mech">Mechanical</option>
-        </select>
+        <!-- Theme Toggle Switch -->
+        <label for="theme" class="theme">
+            <span class="theme__toggle-wrap">
+                <input id="theme" class="theme__toggle" type="checkbox" role="switch" name="theme" value="dark">
+                <span class="theme__fill"></span>
+                <span class="theme__icon">
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                    <span class="theme__icon-part"></span>
+                </span>
+            </span>
+        </label>
     </header>
     <main>
-        <section id="uploadSection">
-            <h2>Upload Your Notes</h2>
-            <form id="uploadForm">
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required>
-                <label for="notes">Notes:</label>
-                <textarea id="notes" name="notes"></textarea>
-                <label for="file">Upload PDF:</label>
-                <input type="file" id="file" name="file" accept="application/pdf" required>
-                <button type="submit">Upload</button>
-            </form>
+        <section class="about">
+            <h1>About NoteMates</h1>
+            <p>NoteMates is an innovative platform designed to help students manage and access their academic notes efficiently. Created by Tejash Kumar Luhar, it aims to simplify the process of note-taking and sharing.</p>
+            <p>“Education is the most powerful weapon which you can use to change the world.” – Nelson Mandela</p>
+            <!-- Add more quotes or text as needed -->
+            <img src="images/about-image.jpg" alt="NoteMates" class="about-image">
         </section>
-        <section id="notesSection">
-            <h2>Shared Notes</h2>
-            <div id="notesContainer"></div>
+        <section id="university-section">
+            <h2>Select University, Branch, and Year</h2>
+            <!-- University Dropdown -->
+            <select id="university" class="dropdown">
+                <option value="" disabled selected>Select University</option>
+                <!-- Add universities here -->
+            </select>
+            <!-- Branch Dropdown -->
+            <select id="branch" class="dropdown" disabled>
+                <option value="" disabled selected>Select Branch</option>
+                <!-- Add branches here -->
+            </select>
+            <!-- Year Dropdown -->
+            <select id="year" class="dropdown" disabled>
+                <option value="" disabled selected>Select Year</option>
+                <!-- Add years here -->
+            </select>
+            <div id="notes-display">
+                <!-- Notes will be displayed here -->
+            </div>
         </section>
     </main>
-    <script src="script.js"></script>
+    <script src="scripts1.js"></script>
 </body>
 </html>
